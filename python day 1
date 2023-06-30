@@ -1,0 +1,24 @@
+class SubarraySumCalculator:
+    def __init__(self, NUM):
+        self.NUM = NUM
+
+def find_subarrays(NUM, K):
+    subarrays = []
+    for i in range(len(NUM) - K + 1):
+        subarray = NUM[i:i+K]
+        subarrays.append(subarray)
+    return subarrays
+
+def sum_subarrays(subarrays):
+    subarray_sums = []
+    for subarray in subarrays:
+        subarray_sum = sum(subarray)
+        subarray_sums.append(subarray_sum)
+    return subarray_sums
+
+NUM = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+K = 3
+
+subarray_sums = sum_subarrays(subarrays)
+
+print(subarray_sums)
